@@ -166,6 +166,21 @@
         return nil;
     }
 }
+-(NSLayoutConstraint *)constrainToRatioOfImage:(UIImage*)image
+{
+    if( image != nil )
+    {
+        CGSize imageNativeSize = [image size];
+        if(
+           imageNativeSize.width > 0
+           && imageNativeSize.height > 0
+           )
+        {
+            return [self constrainToRatio:imageNativeSize.width/imageNativeSize.height];
+        }
+    }
+    return nil;
+}
 
 #pragma mark - Constraining to a relative size
 
