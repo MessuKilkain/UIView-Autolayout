@@ -186,6 +186,10 @@
 
 -(NSLayoutConstraint *)pinToSuperviewWidthWithMultiplier:(CGFloat)multiplier
 {
+    return [self pinToSuperviewWidthWithMultiplier:multiplier relation:NSLayoutRelationEqual];
+}
+-(NSLayoutConstraint *)pinToSuperviewWidthWithMultiplier:(CGFloat)multiplier relation:(NSLayoutRelation)relation
+{
     UIView *superview = self.superview;
     NSAssert(superview,@"Can't pin to a superview if no superview exists");
     
@@ -193,7 +197,7 @@
     [NSLayoutConstraint
      constraintWithItem:self
      attribute:NSLayoutAttributeWidth
-     relatedBy:NSLayoutRelationEqual
+     relatedBy:relation
      toItem:superview
      attribute:NSLayoutAttributeWidth
      multiplier:multiplier
@@ -203,6 +207,10 @@
 }
 -(NSLayoutConstraint *)pinToSuperviewHeightWithMultiplier:(CGFloat)multiplier
 {
+    return [self pinToSuperviewHeightWithMultiplier:multiplier relation:NSLayoutRelationEqual];
+}
+-(NSLayoutConstraint *)pinToSuperviewHeightWithMultiplier:(CGFloat)multiplier relation:(NSLayoutRelation)relation
+{
     UIView *superview = self.superview;
     NSAssert(superview,@"Can't pin to a superview if no superview exists");
     
@@ -210,7 +218,7 @@
     [NSLayoutConstraint
      constraintWithItem:self
      attribute:NSLayoutAttributeHeight
-     relatedBy:NSLayoutRelationEqual
+     relatedBy:relation
      toItem:superview
      attribute:NSLayoutAttributeHeight
      multiplier:multiplier
