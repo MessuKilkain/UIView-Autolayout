@@ -491,7 +491,7 @@
     return [constraints copy];
 }
 
-#pragma mark - Private
+#pragma mark - Utility
 
 -(UIView*)commonSuperviewWithView:(UIView*)peerView
 {
@@ -507,6 +507,8 @@
     
     return commonSuperview;
 }
+
+#pragma mark - Private
 
 -(NSLayoutConstraint *)applyAttribute:(NSLayoutAttribute)attribute withConstant:(CGFloat)constant relation:(NSLayoutRelation)relation
 {

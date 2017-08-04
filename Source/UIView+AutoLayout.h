@@ -417,6 +417,20 @@ typedef NS_OPTIONS(NSUInteger, JRTViewPinEdges)
  */
 -(NSArray*)spaceViews:(NSArray*)views onAxis:(UILayoutConstraintAxis)axis;
 
+
+/**
+ * @name Utility
+ */
+
+/**
+ *  Get the closest common superview of self and peerView. Both views must be in the same view hierarchy.
+ *
+ *  @param peerView The view you want the common superview with.
+ *
+ *  @return A UIView which self and peerView are descendant of.
+ */
+-(UIView*)commonSuperviewWithView:(UIView*)peerView;
+
 @end
 
 
